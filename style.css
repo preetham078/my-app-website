@@ -1,24 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* BODY */
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f6ff;
+  background: linear-gradient(135deg, #4a6cf7, #6dd5fa);
+  color: #fff;
+  min-height: 100vh;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* DARK MODE BUTTON */
+#themeToggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: #fff;
+  color: #333;
+  font-size: 1.2rem;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+/* HERO */
+.hero {
   text-align: center;
-  padding: 20px;
+  padding: 80px 20px;
+  animation: fadeDown 1s ease;
 }
 
-.card {
-  background: white;
-  padding: 20px;
-  max-width: 300px;
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
 }
 
+.hero p {
+  opacity: 0.9;
+}
+
+/* APP SECTION */
+.apps {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.app-card {
+  background: #fff;
+  color: #333;
+  width: 320px;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  transition: all 0.4s ease;
+}
+
+.app-card:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+.app-card h2 {
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+/* BUTTON */
 .btn {
   display: inline-block;
-  background: #4a6cf7;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #4a6cf7, #6dd5fa);
+  color: #fff;
   text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(74,108,247,0.6);
+}
+
+/* ABOUT */
+.about {
+  max-width: 700px;
+  margin: 60px auto;
+  background: rgba(255,255,255,0.15);
+  padding: 30px;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  animation: fadeUp 1.2s ease;
+}
+
+.about h2 {
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.85;
+  font-size: 0.9rem;
+}
+
+/* DARK MODE STYLES */
+body.dark {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+
+body.dark .app-card {
+  background: #1c1c1c;
+  color: #fff;
+}
+
+body.dark .about {
+  background: rgba(0,0,0,0.4);
+}
+
+body.dark #themeToggle {
+  background: #000;
+  color: #fff;
+}
+
+/* ANIMATIONS */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(74,108,247,0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(74,108,247,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(74,108,247,0);
+  }
 }

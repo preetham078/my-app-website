@@ -1,21 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preetham Apps</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preetham Android Apps</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h1>Welcome to Preetham's Android Apps</h1>
-  <p>Download my Android apps safely</p>
+  <!-- Dark Mode Toggle -->
+  <button id="themeToggle">🌙</button>
 
-  <div class="card">
-    <h2>S Smart</h2>
-    <p>Track your studies</p>
-    <a href="apk/app.apk" download class="btn">Download APK</a>
-  </div>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <h1>Preetham’s Android Apps</h1>
+    <p>Download my Android apps safely & easily</p>
+  </header>
+
+  <!-- APP SECTION -->
+  <section class="apps">
+    <div class="app-card">
+      <h2>S Smart</h2>
+      <p class="tagline">Track your studies smarter 📘</p>
+      <a class="btn" href="#" download>Download APK</a>
+    </div>
+  </section>
+
+  <!-- ABOUT ME -->
+  <section class="about">
+    <h2>About Me</h2>
+    <p>
+      Hi 👋 I’m <strong>Preetham</strong>, an aspiring Android app developer.
+      I enjoy building simple, useful applications with clean design and smooth
+      user experience.
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Preetham • All Rights Reserved</p>
+  </footer>
+
+  <!-- DARK MODE SCRIPT -->
+  <script>
+    const toggle = document.getElementById("themeToggle");
+    toggle.onclick = () => {
+      document.body.classList.toggle("dark");
+      toggle.textContent =
+        document.body.classList.contains("dark") ? "☀️" : "🌙";
+    };
+  </script>
 
 </body>
 </html>
